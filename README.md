@@ -58,7 +58,8 @@ And there is a response:
 As you see the `vdr` adapter needs its own credentials in Basic form, let's just add a new header 
 `authorization-adapter-vdr` and use user vdr:vdr:
 ```
-curl --verbose --header "authorization: Basic YWRtaW46YWRtaW4=" --header "authorization-adapter-vdr: Basic dmRyOnZkcg==" \
+curl --verbose --header "authorization: Basic YWRtaW46YWRtaW4=" \ 
+--header "authorization-adapter-vdr: Basic dmRyOnZkcg==" \
 http://localhost:2020/webserver-security-test/adapter?name=vdr
 ```
 And there is a response:
