@@ -40,7 +40,7 @@ curl --verbose --header "authorization: Basic YWRtaW46YWRtaW4=" \
 http://localhost:2020/webserver-security-test/adapter?name=vdr
 ```
 And there is a response:
-```
+```json
 {
     "code": 401,
     "message": "Unauthorized",
