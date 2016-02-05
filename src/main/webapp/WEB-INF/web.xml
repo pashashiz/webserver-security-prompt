@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <filter>
+        <filter-name>adapter-security-filter</filter-name>
+        <filter-class>com.asg.test.security.AdapterSecurityFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>adapter-security-filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>application</servlet-name>
+        <servlet-class>com.asg.test.Application</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>adapter</servlet-name>
+        <servlet-class>com.asg.test.Adapter</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>application</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>adapter</servlet-name>
+        <url-pattern>/adapter/*</url-pattern>
+    </servlet-mapping>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Secured application</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+
+    <security-role>
+        <description>RM users</description>
+        <role-name>admin</role-name>
+    </security-role>
+
+</web-app>
